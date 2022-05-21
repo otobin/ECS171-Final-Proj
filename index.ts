@@ -22,6 +22,22 @@ function initMap(): void {
   new AutocompleteDirectionsHandler(map);
 }
 
+// Taks in the list of lat/lng points and makes it into a tuple list to pass to the backend
+function make_tuple_list(response) {
+  let tuple_list = []
+  if (response.routes != null) {
+    let route_object = response.routes[0]
+    if (route_object.overview_path != null) {
+      let lat_lng_arr = route_object.overview_path
+      for (let i = 0; i < lat_lng_arr.length; i++) {
+        let lat = lat_lng_arr[i].lat()
+        let lng = lat_lng_arr[i].lng()
+        let tuple = (lat, lng)
+        tuple_list.push((lat, lng))
+      }
+    }
+}
+
 class AutocompleteDirectionsHandler {
   map: google.maps.Map;
   originPlaceId: string;
@@ -137,11 +153,7 @@ class AutocompleteDirectionsHandler {
           console.log(response)
           if (response != null) {
             if (response.routes != null) {
-              let route_object = response.routes[0]
-              let lat_lng_arr = route_object.overview_path
-              for (let i = 0; i < lat_lng_arr.length; i++) {
-                console.log("lat: " + lat_lng_arr[i].lat() + ", lng: ", + lat_lng_arr[i].lng());
-              }
+              lat_lng_tuple_list = make_tuple_list()
             }
           }
           me.directionsRenderer.setDirections(response);
