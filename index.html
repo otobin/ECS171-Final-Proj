@@ -1,61 +1,35 @@
 <!DOCTYPE html>
-<!--
- @license
- Copyright 2019 Google LLC. All Rights Reserved.
- SPDX-License-Identifier: Apache-2.0
--->
-<html>
-  <head>
-    <title>Place Autocomplete and Directions</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Rerouting app</title>
+    
+    <link rel = "stylesheet" type = "text/css" href = "aboutStyle.css">
+    
+</head>
 
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script type="module" src="./index.ts"></script>
-  </head>
-  <body>
-    <div style="display: none">
-      <input
-        id="origin-input"
-        class="controls"
-        type="text"
-        placeholder="Enter an origin location"
-      />
+<body>
+    <div class = "container">
+        <div class = "initialScreen">
+            <div class = "title">
+                <h1>
+                    <span>The quicker and safer way for people</span>
+                    <strong><br>to reach their destination <br>through rerouting</strong>
+                </h1>
+            </div>
 
-      <input
-        id="destination-input"
-        class="controls"
-        type="text"
-        placeholder="Enter a destination location"
-      />
-
-      <div id="mode-selector" class="controls">
-        <input
-          type="radio"
-          name="type"
-          id="changemode-walking"
-          checked="checked"
-        />
-        <label for="changemode-walking">Walking</label>
-
-        <input type="radio" name="type" id="changemode-transit" />
-        <label for="changemode-transit">Transit</label>
-
-        <input type="radio" name="type" id="changemode-driving" />
-        <label for="changemode-driving">Driving</label>
-      </div>
+            <div class = "getStarted">
+                <div class = "startedButton">
+                    <a href = "about.html" style = "color: white">Get Started</a>
+                </div>
+                <div class = "startedInfo">
+                    <p>Start getting safe reroute to your spot!</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="map"></div>
-
-    <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURtJMdHr8a8Ghk0jes_VoTZSdkswYP8w&callback=initMap&libraries=places&v=weekly"
-      defer
-    ></script>
-  </body>
+</body>
 </html>
+<!DOCTYPE html>
