@@ -1,0 +1,67 @@
+h1 span {
+    font-weight: 400;
+}
+
+html {
+  --w:2px; /* Thiclness of the line */
+  --n:5;   /* number of lines */
+  
+  background: linear-gradient(90deg, #0000 calc(100% - var(--w)), #f1f0f0 0);
+  background-size: calc((100% - var(--n)*var(--w))/(var(--n) + 1) + var(--w)) 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: Cern,Helvetica,Arial,sans-serif;
+    
+}
+
+.initialScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-left: 360px;
+    font-size: 1.5rem;
+}
+
+.startedButton {
+    background: #111111;
+    border: 1px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+    margin-right: 1.6rem;
+    padding-top: 1.6rem;
+    text-align: left;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+    margin-left: -10px;
+    border-radius: 12px;
+    
+}
+
+.getStarted {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.startedInfo {
+    color: #383838;
+    font-weight: bold;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
