@@ -65,3 +65,46 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
+.boxModel1 {
+    margin-top: 200px;
+    background: #f9f9ff;
+}
+
+.boxModel2 {
+    margin-top: 150px;
+    background: #f9f9ff;
+    display: flex;
+    flex-direction: row;
+}
+
+.boxModel3 {
+    margin-top: 100px;
+    background: #f9f9ff;
+    display: flex;
+    flex-direction: row;
+}
+
+.box1Info {
+    margin-left: 650px;
+    margin-top: -450px;
+    color: #383838;
+    font-size: 20px;
+}
+
+.box2Info {
+    color: #383838;
+    font-size: 20px;
+}
+
+.box3Info {
+    color: #383838;
+    font-size: 20px;
+}
+
+.infoText {
+    line-height: 2;
+    margin-left: 150px;
+}
+
+
+
