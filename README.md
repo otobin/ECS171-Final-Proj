@@ -3,8 +3,30 @@ ECS171 Final Project
 
 ## How to run?
 ```sh
+
+npm i
+
+Make sure the following python packages are installed:
+pip3 install seaborn
+pip3 install matplotlib
+pip3 install sklearn
+pip3 install pandas
+pip3 install joblib
+
 pip3 install flask #to install flask 
 py app.py #to run the app
+
+If the above two commands dont work, do:
+virtualenv flask
+cd flask
+source bin/activate
+pip install flask
+pip install seaborn
+pip install matplotlib
+pip install sklearn
+pip install pandas
+pip install joblib
+py app.py
 ```
 ## Problem statement
 There have been occasional problems with walking around big cities like San

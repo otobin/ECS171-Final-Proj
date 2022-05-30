@@ -80,7 +80,9 @@ def getCrimeWeight(lat_lng_arr):
     
     overallCrimeScore = crimeScore / len(crimeWeightMap)
     print(overallCrimeScore)
-    crimeLevel = ((overallCrimeScore -10.5)/1)*10
+    crimeLevel = ((overallCrimeScore - 10.0)/1)*20
+    if crimeLevel < 0:
+        crimeLevel = 0.1
 
     return crimeLevel
 
