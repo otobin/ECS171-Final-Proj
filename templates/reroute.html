@@ -7,8 +7,16 @@
   <head>
     <title>Place Autocomplete and Directions</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/routestyle.css') }}" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script>
+      function mapIsReady() {
+       console.log(window.crimeWeight)
+      }
+    
+    </script>
     <script type = "text/javascript" src="{{ url_for('static', filename = 'js/index.js') }}"></script>
   </head>
   <body>
@@ -19,13 +27,16 @@
         type="text"
         placeholder="Enter an origin location"
       />
-
       <input
         id="destination-input"
         class="controls"
         type="text"
         placeholder="Enter a destination location"
       />
+      <input
+       id = "location"
+       type = "hidden"
+       />
 
       <div id="mode-selector" class="controls">
         <input
@@ -45,7 +56,33 @@
     </div>
 
     <div id="map"></div>
-
+    <div class = "container">
+      <div class = "crimeHeader">
+        <h1 style = "margin-top: -700px;">Crime Data</h1>
+      </div>
+      <div class = "labels">
+        <h3 style = "padding-left: 15px;">Crime Level</h3>
+        <ul>
+          <li class = "box green">Level 1</li>
+          <li class = "box darkGreen">Level 2</li>
+          <li class = "box yellow">Level 3</li>
+          <li class = "box red">Level 4</li>
+          <li class = "box purple">Level 5</li>
+        </ul>
+      </div>
+      <div id = "crimeWeight">
+        <h3>Crime Weight is: please search for a route first</h3>
+      </div>
+      <div class = "progressFlex">
+        <div class = "crimeRateText" style = "margin-top: 50px;">
+          <h4></h4>
+        </div>
+        <div class="progressBar w3-grey w3-round">
+            <div id = "progressValue" class="w3-container w3-round w3-orange" style = "width: 0%;"></div>
+        </div>
+    </div>
+      </div>
+    </div>
     <!-- 
      The `defer` attribute causes the callback to execute after the full HTML
      document has been parsed. For non-blocking uses, avoiding race conditions,

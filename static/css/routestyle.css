@@ -9,6 +9,7 @@
  */
  #map {
     height: 100%;
+    width: 50%;
   }
   
   /* 
@@ -19,6 +20,9 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #f9f9ff;
+    font-family: Rubik, sans-serif;
+    color: #34495e;
   }
   
   .controls {
@@ -66,5 +70,60 @@
     display: flex;
     flex-direction: row;
   }
+
+  .container {
+    margin-left: 70%;
+    margin-top: -400px;
+  }
+
+  .crimeHeader {
+    font-family: Rubik, sans-serif;
+    color: #34495e;
+  }
   
+  li {
+    line-height: 1.5;
+  }
+
+  .box {
+    position: relative;
+    margin-right: 20px;
+  }
+  .box:before{
+    position: absolute;
+    left: 70px;
+    content: "";
+    height:20px;
+    width:20px;
+    margin-bottom:15px;
+    border:1px solid black;
+  }
+  .box.red:before{
+    background-color:red;
+  }
+  .box.green:before{
+    background-color:green;
+  }
+  .box.darkGreen:before{
+    background-color:darkgreen;
+  }
+  .box.purple:before{
+    background-color:purple;
+  }
+  .box.yellow:before{
+    background-color:yellow;
+  }
+  
+  .labels {
+    margin-left: -280px;
+    border: 2px solid silver;
+    border-radius: 15px;
+    width: 150px;
+  }
+
+  .progressBar {
+    margin-right: 200px;
+    margin-top: 200px;
+  }
+
   
