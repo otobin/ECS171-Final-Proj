@@ -90,13 +90,13 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
 
                         //get post request browser side
                         async function sendPostRequest(url,data) {
+                            document.getElementById("progressbar").style["display"] = "none";
                             let params = {
                               method: 'POST', 
                               headers: {'Content-Type': 'application/json'},
                               body: JSON.stringify(data) };
                             console.log("about to send post request", params);
                             document.getElementById("crimeWeight").innerHTML = "<h3>Crime score is: Loading</h3>"
-                            document.getElementById("progressValue").style.width = "0%"
                             
                             let response = await fetch(url,params);
                             if (response.ok) {
@@ -116,21 +116,23 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
                             var progressScore = (crimeWeight / 5) * 100
                             console.log("Progress score ", progressScore)
                             // Change the style of the progress bar to reflect the crime rate
-                            var color = "w3-blue"
-                            if (progressScore > 0 & progressScore < 1) {
-                                color = "w3-green"
-                            } else if (progressScore > 1 & progressScore < 2) {
-                                color = "w3-darkGreen"
-                            } else if (progressScore > 2 & progressScore < 3) {
-                                color = "w3-yellow"
-                            } else if (progressScore > 3 & progressScore < 4) {
-                                color = "w3-red"
-                            } else if (progressScore > 4) {
-                                color = "w3-purple"
+                            var color = "blue"
+                            if (crimeWeight > 0 & crimeWeight <= 1) {
+                                color = "green"
+                            } else if (crimeWeight > 1 & crimeWeight <= 2) {
+                                color = "darkGreen"
+                            } else if (crimeWeight > 2 & crimeWeight <= 3) {
+                                color = "yellow"
+                            } else if (crimeWeight > 3 & crimeWeight <= 4) {
+                                color = "red"
+                            } else if (crimeWeight > 4) {
+                                color = "purple"
                             }
-                            console.log(document.getElementById("progressValue"))
-                            document.getElementById("progressValue").style.width = progressScore.toString() + '%'
-                            document.getElementById("progressValue").classList.add(color);       
+                            let element = document.getElementById("progressbar2")
+                            console.log(color)
+                            element.style["background-color"] = color;
+                            element.style["width"] = progressScore.toString() + '%';
+                            document.getElementById("progressbar").style["display"] = "flex";
                     })
                     }
                 }

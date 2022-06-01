@@ -121,15 +121,21 @@
     width: 150px;
   }
 
-  .progressBar {
-    margin-right: 200px;
-    margin-top: 200px;
-    height: 50px;
+  #progressbar {
+    background-color: grey;
+    border-radius: 13px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    display: none;
+    max-width: 300px;
   }
-
-  .progressValue {
-    height: 50px;
-    z-index: 9;
+  
+  #progressbar2 {
+    background-color: orange;
+    width: 40%;
+    /* Adjust with JavaScript */
+    height: 20px;
+    border-radius: 10px;
   }
 
   
