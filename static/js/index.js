@@ -112,6 +112,7 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
                         .then(function(crimeWeight) {
                             console.log("Crime Weight: ", crimeWeight)
                             document.getElementById("crimeWeight").innerHTML = "<h3>Crime score is: " + crimeWeight + "</h3>"
+                            
                             var progressScore = (crimeWeight / 5) * 100
                             console.log("Progress score ", progressScore)
                             // Change the style of the progress bar to reflect the crime rate
@@ -129,9 +130,7 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
                             }
                             console.log(document.getElementById("progressValue"))
                             document.getElementById("progressValue").style.width = progressScore.toString() + '%'
-                            document.getElementById("progressValue").classList.remove("w3-orange");
-                            document.getElementById("progressValue").classList.add(color);
-                            document.getElementById("progressValue").style.display = "flex";
+                            document.getElementById("progressValue").classList.add(color);       
                     })
                     }
                 }

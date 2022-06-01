@@ -124,6 +124,12 @@
   .progressBar {
     margin-right: 200px;
     margin-top: 200px;
+    height: 50px;
+  }
+
+  .progressValue {
+    height: 50px;
+    z-index: 9;
   }
 
   
