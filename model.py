@@ -83,6 +83,8 @@ def getCrimeWeight(lat_lng_arr):
     crimeLevel = ((overallCrimeScore - 10.0)/1)*20
     if crimeLevel < 0:
         crimeLevel = 0.1
+    if crimeLevel > 5:
+        crimeLevel = 5
 
     return crimeLevel
 

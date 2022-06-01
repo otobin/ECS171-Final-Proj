@@ -112,12 +112,27 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
                         .then(function(crimeWeight) {
                             console.log("Crime Weight: ", crimeWeight)
                             document.getElementById("crimeWeight").innerHTML = "<h3>Crime score is: " + crimeWeight + "</h3>"
-                            progressScore = (crimeWeight / 5) * 100
-                            document.getElementById("progressValue").style.width = progressScore + '%'
+                            var progressScore = (crimeWeight / 5) * 100
+                            console.log("Progress score ", progressScore)
+                            // Change the style of the progress bar to reflect the crime rate
+                            var color = "w3-blue"
+                            if (progressScore > 0 & progressScore < 1) {
+                                color = "w3-green"
+                            } else if (progressScore > 1 & progressScore < 2) {
+                                color = "w3-darkGreen"
+                            } else if (progressScore > 2 & progressScore < 3) {
+                                color = "w3-yellow"
+                            } else if (progressScore > 3 & progressScore < 4) {
+                                color = "w3-red"
+                            } else if (progressScore > 4) {
+                                color = "w3-purple"
+                            }
+                            console.log(document.getElementById("progressValue"))
+                            document.getElementById("progressValue").style.width = progressScore.toString() + '%'
+                            document.getElementById("progressValue").classList.remove("w3-orange");
+                            document.getElementById("progressValue").classList.add(color);
+                            document.getElementById("progressValue").style.display = "flex";
                     })
-                        //for (var i = 0; i < lat_lng_arr.length; i++) {
-                            //console.log("lat: " + lat_lng_arr[i].lat() + ", lng: ", +lat_lng_arr[i].lng());
-                        //}
                     }
                 }
                 me.directionsRenderer.setDirections(response);
