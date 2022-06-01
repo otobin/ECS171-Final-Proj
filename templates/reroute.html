@@ -9,7 +9,6 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/routestyle.css') }}" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script>
       function mapIsReady() {
@@ -73,14 +72,9 @@
       <div id = "crimeWeight">
         <h3>Crime Weight is: please search for a route first</h3>
       </div>
-      <div class = "progressFlex">
-        <div class = "crimeRateText" style = "margin-top: 50px;">
-          <h4></h4>
-        </div>
-        <div class="progressBar w3-grey w3-round">
-            <div id = "progressValue" class="w3-container w3-round w3-orange" style = "width: 0%;"></div>
-        </div>
-    </div>
+      <div id="progressbar">
+        <div id="progressbar2"></div>
+      </div>
       </div>
     </div>
     <!-- 

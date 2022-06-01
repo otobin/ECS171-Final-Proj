@@ -121,9 +121,21 @@
     width: 150px;
   }
 
-  .progressBar {
-    margin-right: 200px;
-    margin-top: 200px;
+  #progressbar {
+    background-color: grey;
+    border-radius: 13px;
+    /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    display: none;
+    max-width: 300px;
+  }
+  
+  #progressbar2 {
+    background-color: orange;
+    width: 40%;
+    /* Adjust with JavaScript */
+    height: 20px;
+    border-radius: 10px;
   }
 
   

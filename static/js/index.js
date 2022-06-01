@@ -90,13 +90,13 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
 
                         //get post request browser side
                         async function sendPostRequest(url,data) {
+                            document.getElementById("progressbar").style["display"] = "none";
                             let params = {
                               method: 'POST', 
                               headers: {'Content-Type': 'application/json'},
                               body: JSON.stringify(data) };
                             console.log("about to send post request", params);
                             document.getElementById("crimeWeight").innerHTML = "<h3>Crime score is: Loading</h3>"
-                            document.getElementById("progressValue").style.width = "0%"
                             
                             let response = await fetch(url,params);
                             if (response.ok) {
@@ -112,12 +112,28 @@ var AutocompleteDirectionsHandler = /** @class */ (function () {
                         .then(function(crimeWeight) {
                             console.log("Crime Weight: ", crimeWeight)
                             document.getElementById("crimeWeight").innerHTML = "<h3>Crime score is: " + crimeWeight + "</h3>"
-                            progressScore = (crimeWeight / 5) * 100
-                            document.getElementById("progressValue").style.width = progressScore + '%'
+                            
+                            var progressScore = (crimeWeight / 5) * 100
+                            console.log("Progress score ", progressScore)
+                            // Change the style of the progress bar to reflect the crime rate
+                            var color = "blue"
+                            if (crimeWeight > 0 & crimeWeight <= 1) {
+                                color = "green"
+                            } else if (crimeWeight > 1 & crimeWeight <= 2) {
+                                color = "darkGreen"
+                            } else if (crimeWeight > 2 & crimeWeight <= 3) {
+                                color = "yellow"
+                            } else if (crimeWeight > 3 & crimeWeight <= 4) {
+                                color = "red"
+                            } else if (crimeWeight > 4) {
+                                color = "purple"
+                            }
+                            let element = document.getElementById("progressbar2")
+                            console.log(color)
+                            element.style["background-color"] = color;
+                            element.style["width"] = progressScore.toString() + '%';
+                            document.getElementById("progressbar").style["display"] = "flex";
                     })
-                        //for (var i = 0; i < lat_lng_arr.length; i++) {
-                            //console.log("lat: " + lat_lng_arr[i].lat() + ", lng: ", +lat_lng_arr[i].lng());
-                        //}
                     }
                 }
                 me.directionsRenderer.setDirections(response);
